@@ -8,6 +8,7 @@ ask: func [question [string!] /local a][
     Windows WindowsXP MSDOS [
       prin question
       call/console/output {set /p ask=&echo %ask%} a
+      a: replace a "^/" ""
       return a
     ]
     macOs Darwin [
